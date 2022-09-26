@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   err_msg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 17:14:29 by dgioia            #+#    #+#             */
-/*   Updated: 2022/09/24 17:14:29 by dgioia           ###   ########.fr       */
+/*   Created: 2022/09/26 17:00:59 by dgioia            #+#    #+#             */
+/*   Updated: 2022/09/26 17:00:59 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+int err_msg(int err)
 {
-    t_list *stack_a;
-    t_list *stack_b;
-
-    stack_a = NULL;
-    stack_b = NULL;
-    check_args(argc, argv);
-    copy_list(argc, argv, &stack_a);
-
+    if (err == 1)
+        return (ft_printf("ERRORE: non ci sono abbastanza numeri\n"));
+    else if (err == 2)
+        return (ft_printf("ERRORE: i numeri inseriti non sono validi\n"));
+    else if (err == 3)
+        return (ft_printf("ERRORE: ci sono numeri duplicati\n"));
+    else if (err == 4)
+        return (ft_printf("ERRORE: il numero supera i limiti consentiti\n"));
     return (0);
 }

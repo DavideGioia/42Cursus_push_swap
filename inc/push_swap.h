@@ -16,8 +16,11 @@
 #include "../libft/includes/ft_printf.h"
 
 int err_msg(int err);
+
 int check_duplicates(int argc, char **argv);
 int check_digit(int argc, char **argv);
 int check_args(int argc, char **argv);
+
+int copy_list(int argc, char **argv, t_list **stack_a);
 
 #endif

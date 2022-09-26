@@ -17,6 +17,9 @@ CC		=	gcc
 CFLAGS	=	-Wall
 
 SRC	=	src/main.c \
+		src/err_msg.c \
+		src/check_args.c \
+		src/list.c \
 
 OBJ	=	$(SRC:.c=.o)
 

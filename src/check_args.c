@@ -12,26 +12,6 @@
 
 #include "../inc/push_swap.h"
 
-int err_msg(int err)
-{
-    if (err == 1)
-    {
-        ft_printf("ERRORE: non ci sono abbastanza numeri\n");
-        return (1);
-    }
-    else if (err == 2)
-    {
-        ft_printf("ERRORE: i numeri inseriti non sono validi\n");
-        return (2);
-    }
-    else if (err == 3)
-    {
-        ft_printf("ERRORE: ci sono numeri duplicati\n");
-        return (3);
-    }
-    return (0);
-}
-
 int check_duplicates(int argc, char **argv)
 {
     int i;
