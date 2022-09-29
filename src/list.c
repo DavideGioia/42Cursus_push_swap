@@ -12,26 +12,16 @@
 
 #include "../inc/push_swap.h"
 
-int copy_list_onearg(char **argv, t_list **stack_a)
+char **split_argv(int argc, char **argv)
 {
-    char **copy_list;
-    t_list *tmp;
-    int i;
+    int size;
+    char **arg;
 
-    i = 0;
-    copy_list = ft_split(argv[1], ' ');
-    while (copy_list[i])
-    {
-        tmp = ft_lstnew(ft_atoi(copy_list[i]));
-        ft_lstadd_back(stack_a, tmp);
-        i++;
-    }
-    return (0);
-}
+    arg = NULL;
+    size = 0;
+    arg = ft_split(argv[1], ' ');
+    while (arg[size] != NULL)
+        size++;
 
-int copy_list(int argc, char **argv, t_list **stack_a)
-{
-    if (argc == 2)
-        copy_list_onearg(argv, stack_a);
-    return (0);
+    return (arg);
 }

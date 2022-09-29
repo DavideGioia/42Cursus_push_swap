@@ -39,7 +39,7 @@ int check_digit(int argc, char **argv)
     int i;
     int j;
 
-    i = 0;
+    i = 1;
     while (++i < argc)
     {
         j = 0;
@@ -56,13 +56,23 @@ int check_digit(int argc, char **argv)
 
 int check_args(int argc, char **argv)
 {
-    if (argc >= 2)
+    char **arg;
+
+    arg = NULL;
+    if (argc == 2)
+    {
+        arg = split_argv(argc, argv);
+        if (check_digit(argc, arg) == 0)
+            check_duplicates(argc, arg);
+        else
+            return (err_msg(1));
+    }
+    else if (argc > 2)
     {
         if (check_digit(argc, argv) == 0)
             check_duplicates(argc, argv);
+        else
+            return (err_msg(1));
     }
-    else
-        return (err_msg(1));
-
     return (0);
 }

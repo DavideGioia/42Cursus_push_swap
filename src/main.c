@@ -20,7 +20,6 @@ int main(int argc, char **argv)
     stack_a = NULL;
     stack_b = NULL;
     check_args(argc, argv);
-    copy_list(argc, argv, &stack_a);
 
     return (0);
 }
