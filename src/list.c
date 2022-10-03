@@ -12,16 +12,17 @@
 
 #include "../inc/push_swap.h"
 
-char **split_argv(int argc, char **argv)
-{
-    int size;
-    char **arg;
+// int	save_list(int argc, char **argv, t_list **stack_a)
+// {
+// 	char	**matrix;
+// 	t_list	*tmp;
+// 	int		i;
 
-    arg = NULL;
-    size = 0;
-    arg = ft_split(argv[1], ' ');
-    while (arg[size] != NULL)
-        size++;
-
-    return (arg);
-}
+// 	i = 0;
+// 	while (matrix[i])
+// 	{
+// 		tmp = ft_lstnew(ft_atoi(matrix[i]));
+// 		ft_lstadd_back(stack_a, tmp);
+// 		i++;
+// 	}
+// }

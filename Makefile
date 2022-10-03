@@ -20,6 +20,7 @@ SRC	=	src/main.c \
 		src/err_msg.c \
 		src/check_args.c \
 		src/list.c \
+		src/utils.c \
 
 OBJ	=	$(SRC:.c=.o)
 
