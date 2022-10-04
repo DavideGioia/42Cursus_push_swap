@@ -11,16 +11,18 @@
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-#include "../libft/includes/libft.h"
-#include "../libft/includes/ft_printf.h"
+# define PUSH_SWAP_H
+# include "../libft/includes/libft.h"
+# include "../libft/includes/ft_printf.h"
 
-int err_msg(int err);
+int	err_msg(int err);
 
-int check_duplicates(int argc, char **argv);
-int check_digit(int argc, char **argv, int i);
-int check_args(int argc, char **argv);
+int	check_duplicates(char **argv);
+int	check_digit(char **argv, int i);
+int	check_args(char **argv, int i);
 
-char **split_argv(int argc, char **argv);
+int	save_list(char **argv, t_list **stack_a, int i);
+
+int	input_checker(int argc, char **argv);
 
 #endif

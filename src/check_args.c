@@ -12,7 +12,7 @@
 
 #include "../inc/push_swap.h"
 
-int	check_duplicates(int argc, char **argv)
+int	check_duplicates(char **argv)
 {
 	int	i;
 	int	j;
@@ -27,14 +27,14 @@ int	check_duplicates(int argc, char **argv)
 		while (argv[k])
 		{
 			if (j == ft_atoi(argv[k++]))
-				return (err_msg(3));
+				exit (err_msg(3));
 		}
 		i++;
 	}
 	return (0);
 }
 
-int	check_digit(int argc, char **argv, int i)
+int	check_digit(char **argv, int i)
 {
 	int	j;
 
@@ -43,29 +43,23 @@ int	check_digit(int argc, char **argv, int i)
 		j = 0;
 		while (argv[i][j])
 		{
+			if (ft_atoi(argv[i]) > 2147483647 || ft_atoi(argv[i]) < -2147483648)
+				exit (err_msg(4));
 			if (argv[i][j] == '-' || argv[i][j] == '+')
 				j++;
 			if (ft_isdigit(argv[i][j++]) == 0)
-				return (err_msg(2));
+				exit (err_msg(2));
 		}
 		i++;
 	}
 	return (0);
 }
 
-int	check_args(int argc, char **argv)
+int	check_args(char **argv, int i)
 {
-	int	i;
-
-	i = 1;
-	if (argc == 2)
-	{
-		argv = split_argv(argc, argv);
-		i = 0;
-	}
-	if (check_digit(argc, argv, i) == 0)
-		check_duplicates(argc, argv);
+	if (check_digit(argv, i) == 0)
+		check_duplicates(argv);
 	else
-		return (err_msg(1));
+		exit (err_msg(1));
 	return (0);
 }
