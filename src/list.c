@@ -12,17 +12,15 @@
 
 #include "../inc/push_swap.h"
 
-// int	save_list(int argc, char **argv, t_list **stack_a)
-// {
-// 	char	**matrix;
-// 	t_list	*tmp;
-// 	int		i;
+int	save_list(char **argv, t_list **stack_a, int i)
+{
+	t_list	*tmp;
 
-// 	i = 0;
-// 	while (matrix[i])
-// 	{
-// 		tmp = ft_lstnew(ft_atoi(matrix[i]));
-// 		ft_lstadd_back(stack_a, tmp);
-// 		i++;
-// 	}
-// }
+	while (argv[i])
+	{
+		tmp = ft_lstnew((int *)ft_atoi(argv[i]));
+		ft_lstadd_back(stack_a, tmp);
+		i++;
+	}
+	return (0);
+}
