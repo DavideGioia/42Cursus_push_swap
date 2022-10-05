@@ -21,6 +21,9 @@ SRC	=	src/main.c \
 		src/check_args.c \
 		src/list.c \
 		src/utils.c \
+		src/moves_a.c \
+		src/moves_b.c \
+		src/moves_general.c \
 
 OBJ	=	$(SRC:.c=.o)
 

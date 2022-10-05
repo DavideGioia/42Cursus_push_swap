@@ -42,5 +42,7 @@ int	main(int argc, char **argv)
 	save_list(argv, &stack_a, i);
 
 	stack_printer(stack_a, stack_b);
+	ft_sa(&stack_a);
+	stack_printer(stack_a, stack_b);
 	return (0);
 }
