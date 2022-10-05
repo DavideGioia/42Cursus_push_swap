@@ -22,5 +22,6 @@ int	save_list(char **argv, t_list **stack_a, int i)
 		ft_lstadd_back(stack_a, tmp);
 		i++;
 	}
+	ft_identity_test(stack_a);
 	return (0);
 }

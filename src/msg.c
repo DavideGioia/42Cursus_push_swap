@@ -24,3 +24,10 @@ int	err_msg(int err)
 		return (ft_printf("ERRORE: il numero supera i limiti consentiti\n"));
 	return (0);
 }
+
+int	info_msg(int info)
+{
+	if (info == 1)
+		return (ft_printf("INFO: lo stack é giá ordinato"));
+	return (0);
+}

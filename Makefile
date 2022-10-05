@@ -14,10 +14,10 @@ NAME	=	push_swap
 
 CC		=	gcc
 
-CFLAGS	=	-Wall
+CFLAGS	=	-Wall -Wextra -Werror
 
 SRC	=	src/main.c \
-		src/err_msg.c \
+		src/msg.c \
 		src/check_args.c \
 		src/list.c \
 		src/utils.c \

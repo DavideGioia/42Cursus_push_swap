@@ -16,6 +16,7 @@
 # include "../libft/includes/ft_printf.h"
 
 int	err_msg(int err);
+int	info_msg(int info);
 
 int	check_duplicates(char **argv);
 int	check_digit(char **argv, int i);
@@ -23,6 +24,7 @@ int	check_args(char **argv, int i);
 
 int	save_list(char **argv, t_list **stack_a, int i);
 
-int	input_checker(int argc, char **argv);
+int	input_checker(int argc);
+int	ft_identity_test(t_list **stack);
 
 #endif

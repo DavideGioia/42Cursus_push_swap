@@ -14,14 +14,16 @@
 
 void	stack_printer(t_list *stack_a, t_list *stack_b)
 {
-	t_list	*tmp;
+	t_list	*tmp1;
+	t_list	*tmp2;
 
-	tmp = stack_a;
+	tmp1 = stack_a;
+	tmp2 = stack_b;
 	ft_printf("stack A\n");
-	while (tmp)
+	while (tmp1)
 	{
-		ft_printf("|\t%i\n", tmp->content);
-		tmp = tmp->next;
+		ft_printf("|\t%i\n", tmp1->content);
+		tmp1 = tmp1->next;
 	}
 }
 
@@ -33,7 +35,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	i = input_checker(argc, argv);
+	i = input_checker(argc);
 	if (i == 0)
 		argv = ft_split(argv[1], ' ');
 	check_args(argv, i);
