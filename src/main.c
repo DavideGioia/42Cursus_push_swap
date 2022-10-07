@@ -12,6 +12,20 @@
 
 #include "../inc/push_swap.h"
 
+int	temporary_stack_b(char **argv, t_list **stack_b, int i)
+{
+	t_list	*tmp;
+
+	while (argv[i])
+	{
+		tmp = ft_lstnew((int *)ft_atoi(argv[i]));
+		ft_lstadd_back(stack_b, tmp);
+		i++;
+	}
+	ft_identity_test(stack_b);
+	return (0);
+}
+
 void	stack_printer(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*tmp1;
@@ -19,11 +33,12 @@ void	stack_printer(t_list *stack_a, t_list *stack_b)
 
 	tmp1 = stack_a;
 	tmp2 = stack_b;
-	ft_printf("stack A\n");
-	while (tmp1)
+	ft_printf("stack A\tstack B\n");
+	while (tmp1 || tmp2)
 	{
-		ft_printf("|\t%i\n", tmp1->content);
+		ft_printf("|\t%i\t|\t%i\n", tmp1->content, tmp2->content);
 		tmp1 = tmp1->next;
+		tmp2 = tmp2->next;
 	}
 }
 
@@ -40,9 +55,9 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	check_args(argv, i);
 	save_list(argv, &stack_a, i);
-
+	temporary_stack_b(argv, &stack_b, i);
 	stack_printer(stack_a, stack_b);
-	ft_sa(&stack_a);
+	ft_pa(&stack_a, &stack_b);
 	stack_printer(stack_a, stack_b);
 	return (0);
 }

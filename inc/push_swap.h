@@ -33,7 +33,7 @@ int		ft_identity_test(t_list **stack);
 
 // stack a moves
 int		ft_sa(t_list **stack_a);
-int		ft_pa(t_list **stack_a);
+int		ft_pa(t_list **stack_a, t_list **stack_b);
 int		ft_ra(t_list **stack_a);
 int		ft_rra(t_list **stack_a);
 

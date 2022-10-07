@@ -14,7 +14,7 @@ NAME	=	push_swap
 
 CC		=	gcc
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall
 
 SRC	=	src/main.c \
 		src/msg.c \
@@ -24,6 +24,7 @@ SRC	=	src/main.c \
 		src/moves_a.c \
 		src/moves_b.c \
 		src/moves_general.c \
+		src/sort.c \
 
 OBJ	=	$(SRC:.c=.o)
 
