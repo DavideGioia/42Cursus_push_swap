@@ -23,7 +23,8 @@ SRC	=	src/main.c \
 		src/utils.c \
 		src/moves_a.c \
 		src/moves_b.c \
-		src/moves_general.c \
+		src/moves_ab.c \
+		src/moves_support.c \
 		src/sort.c \
 
 OBJ	=	$(SRC:.c=.o)

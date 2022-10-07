@@ -27,7 +27,7 @@ int		check_args(char **argv, int i);
 // list
 int		save_list(char **argv, t_list **stack_a, int i);
 
-// extra utils
+// utils
 int		input_checker(int argc);
 int		ft_identity_test(t_list **stack);
 
@@ -39,7 +39,7 @@ int		ft_rra(t_list **stack_a);
 
 // stack b moves
 int		ft_sb(t_list **stack_b);
-int		ft_pb(t_list **stack_b);
+int		ft_pb(t_list **stack_a, t_list **stack_b);
 int		ft_rb(t_list **stack_b);
 int		ft_rrb(t_list **stack_b);
 
@@ -47,6 +47,10 @@ int		ft_rrb(t_list **stack_b);
 int		ft_ss(t_list **stack_a, t_list **stack_b);
 int		ft_rr(t_list **stack_a, t_list **stack_b);
 int		ft_rrr(t_list **stack_a, t_list **stack_b);
-void	swap_nodes(t_list	**head_ref, t_list *curr, t_list *second);
+
+// support moves
+void	swap(t_list	**head_ref, t_list *curr, t_list *second);
+void	rotate(t_list **stack);
+void	reverse_rotate(t_list **stack);
 
 #endif
