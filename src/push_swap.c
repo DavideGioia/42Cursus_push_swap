@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	check_args(argv, i);
 	save_list(argv, &stack_a, i);
-	sort(&stack_a, &stack_b);
-	stack_printer(stack_a, stack_b);
+	//sort(&stack_a, &stack_b);
+	//stack_printer(stack_a, stack_b);
 	return (0);
 }

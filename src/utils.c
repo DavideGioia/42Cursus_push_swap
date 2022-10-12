@@ -17,7 +17,9 @@ int	input_checker(int argc)
 	int	i;
 
 	i = 1;
-	if (argc == 2)
+	if (argc == 1)
+		exit (0);
+	else if (argc == 2)
 		i = 0;
 	return (i);
 }

@@ -16,7 +16,7 @@ CC		=	gcc
 
 CFLAGS	=	-Wall
 
-SRC	=	src/main.c \
+SRC	=	src/push_swap.c \
 		src/msg.c \
 		src/check_args.c \
 		src/list.c \
