@@ -26,6 +26,10 @@ SRC	=	src/push_swap.c \
 		src/moves_ab.c \
 		src/moves_support.c \
 		src/sort.c \
+		src/lis.c \
+		src/sort_3n.c \
+		src/find.c \
+		src/calculate_moves.c
 
 OBJ	=	$(SRC:.c=.o)
 

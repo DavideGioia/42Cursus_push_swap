@@ -26,7 +26,7 @@ int	temporary_stack_b(char **argv, t_list **stack_b, int i)
 	return (0);
 }
 
-// va in crash, va sistemata o rimossa
+// va in segfault, va rimossa
 void	stack_printer(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*tmp1;
@@ -34,12 +34,11 @@ void	stack_printer(t_list *stack_a, t_list *stack_b)
 
 	tmp1 = stack_a;
 	tmp2 = stack_b;
-	ft_printf("stack A\t\tstack B\n");
-	while (ft_lstsize(tmp1) > 1)
+	ft_printf("stack A\n");
+	while (ft_lstsize(tmp1) > 0)
 	{
-		ft_printf("|\t%i\t|\t%i\n", tmp1->content, tmp2->content);
+		ft_printf("|\t%i\n", tmp1->content);
 		tmp1 = tmp1->next;
-		tmp2 = tmp2->next;
 	}
 }
 
@@ -56,7 +55,7 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	check_args(argv, i);
 	save_list(argv, &stack_a, i);
-	//sort(&stack_a, &stack_b);
-	//stack_printer(stack_a, stack_b);
+	sort(&stack_a, &stack_b);
+	stack_printer(stack_a, stack_b);
 	return (0);
 }
