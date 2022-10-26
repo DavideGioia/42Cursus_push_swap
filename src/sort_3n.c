@@ -6,11 +6,12 @@
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 19:38:25 by dgioia            #+#    #+#             */
-/*   Updated: 2022/10/26 17:00:43 by dgioia           ###   ########.fr       */
+/*   Updated: 2022/10/26 17:01:16 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
 void	sort_3n_firsec(int fir, int sec, int thi, t_list **stack)
 {
 	if(sec > thi)
