@@ -12,28 +12,12 @@
 
 #include "../inc/push_swap.h"
 
-int	temporary_stack_b(char **argv, t_list **stack_b, int i)
-{
-	t_list	*tmp;
-
-	while (argv[i])
-	{
-		tmp = ft_lstnew((int *)ft_atoi(argv[i]));
-		ft_lstadd_back(stack_b, tmp);
-		i++;
-	}
-	ft_identity_test(stack_b);
-	return (0);
-}
-
-// va in segfault, va rimossa
-void	stack_printer(t_list *stack_a, t_list *stack_b)
+// da levare
+void	stack_printer(t_list *stack_a)
 {
 	t_list	*tmp1;
-	t_list	*tmp2;
 
 	tmp1 = stack_a;
-	tmp2 = stack_b;
 	ft_printf("stack A\n");
 	while (ft_lstsize(tmp1) > 0)
 	{
@@ -56,6 +40,10 @@ int	main(int argc, char **argv)
 	check_args(argv, i);
 	save_list(argv, &stack_a, i);
 	sort(&stack_a, &stack_b);
-	stack_printer(stack_a, stack_b);
+	// da levare
+	stack_printer(stack_a);
+	// da levare
+	ft_printf("MOSSE EFFETTIVE: %i\n", count_moves(0));
+	ft_lst_delete(&stack_a);
 	return (0);
 }
