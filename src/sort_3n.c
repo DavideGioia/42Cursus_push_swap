@@ -6,7 +6,7 @@
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 19:38:25 by dgioia            #+#    #+#             */
-/*   Updated: 2022/10/18 17:54:59 by dgioia           ###   ########.fr       */
+/*   Updated: 2022/10/26 17:00:43 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	sort_3n_secfir(int fir, int sec, int thi, t_list **stack)
 		ft_ra(stack);
 	}	
 }
+
 void	sort_3n(t_list **stack)
 {
 	t_list	*tmp;
