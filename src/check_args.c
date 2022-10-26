@@ -12,6 +12,22 @@
 
 #include "../inc/push_swap.h"
 
+int	check_and_save_list(char **argv, t_list **stack_a, int i)
+{
+	t_list	*tmp;
+
+	while (argv[i])
+	{
+		tmp = ft_lstnew((int)ft_atoi(argv[i]));
+		ft_lstadd_back(stack_a, tmp);
+		i++;
+	}
+	if (ft_identity_test(stack_a) == 1)
+		exit (info_msg(1));
+	return (0);
+}
+
+
 int	check_duplicates(char **argv)
 {
 	int	i;
