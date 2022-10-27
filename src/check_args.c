@@ -23,10 +23,9 @@ int	check_and_save_list(char **argv, t_list **stack_a, int i)
 		i++;
 	}
 	if (ft_identity_test(stack_a) == 1)
-		exit (info_msg(1));
+		return (1);
 	return (0);
 }
-
 
 int	check_duplicates(char **argv)
 {
@@ -43,7 +42,7 @@ int	check_duplicates(char **argv)
 		while (argv[k])
 		{
 			if (j == ft_atoi(argv[k++]))
-				exit (err_msg(3));
+				return (1);
 		}
 		i++;
 	}
@@ -60,11 +59,11 @@ int	check_digit(char **argv, int i)
 		while (argv[i][j])
 		{
 			if (ft_atoi(argv[i]) > 2147483647 || ft_atoi(argv[i]) < -2147483648)
-				exit (err_msg(4));
+				return (1);
 			if (argv[i][j] == '-' || argv[i][j] == '+')
 				j++;
 			if (ft_isdigit(argv[i][j++]) == 0)
-				exit (err_msg(2));
+				return (2);
 		}
 		i++;
 	}
@@ -76,6 +75,6 @@ int	check_args(char **argv, int i)
 	if (check_digit(argv, i) == 0)
 		check_duplicates(argv);
 	else
-		exit (err_msg(1));
+		return (1);
 	return (0);
 }

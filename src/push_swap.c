@@ -12,6 +12,35 @@
 
 #include "../inc/push_swap.h"
 
+int	free_stuff(t_list *node, char **matrix)
+{
+	int	i;
+
+	i = 0;
+	if (node != NULL)
+	{
+		free(node);
+		node = NULL;
+	}
+	if (matrix != NULL)
+	{
+		while (matrix[i])
+		{
+			free(matrix[i++]);
+		}
+		free(matrix);
+		matrix = NULL;
+	}
+	return (0);
+}
+
+
+int	err_msg()
+{
+	ft_printf("Error\n");
+	return (0);
+}
+
 // da levare
 void	stack_printer(t_list *stack_a)
 {
@@ -37,13 +66,17 @@ int	main(int argc, char **argv)
 	i = input_checker(argc);
 	if (i == 0)
 		argv = ft_split(argv[1], ' ');
-	check_args(argv, i);
-	save_list(argv, &stack_a, i);
+	if (check_args(argv, i) != 0 || check_and_save_list(argv, &stack_a, i) != 0)
+	{
+		free_stuff(NULL, argv);
+		ft_lstdelall(&stack_a);
+		return (0);
+	}
 	sort(&stack_a, &stack_b);
 	// da levare
 	stack_printer(stack_a);
 	// da levare
 	ft_printf("MOSSE EFFETTIVE: %i\n", count_moves(0));
-	ft_lst_delete(&stack_a);
+	ft_lstdelall(&stack_a);
 	return (0);
 }
