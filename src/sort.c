@@ -6,7 +6,7 @@
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:24:46 by dgioia            #+#    #+#             */
-/*   Updated: 2022/10/26 17:07:14 by dgioia           ###   ########.fr       */
+/*   Updated: 2022/10/27 15:36:44 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	sort_stack_b(t_list **stack_a, t_list **stack_b)
 
 	while (ft_lstsize(*stack_b) > 0)
 	{	
-		best_number = ft_find_best(stack_a, stack_b);
+		best_number = find_best_nb(stack_a, stack_b);
 		sort_final(stack_a, stack_b, best_number);
 	}
 	return ;
@@ -96,7 +96,6 @@ int	sort(t_list **stack_a, t_list **stack_b)
 	sort_stack_b(stack_a, stack_b);
 	while (ft_identity_test(stack_a) == 0)
 		ft_rra(stack_a);
-	
 	free(array_conv);
 	free(lis);
 	return (0);

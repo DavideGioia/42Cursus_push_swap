@@ -12,16 +12,11 @@
 
 #include "../inc/push_swap.h"
 
-int	free_stuff(t_list *node, char **matrix)
+int	free_stuff(char **matrix)
 {
 	int	i;
 
 	i = 0;
-	if (node != NULL)
-	{
-		free(node);
-		node = NULL;
-	}
 	if (matrix != NULL)
 	{
 		while (matrix[i])
@@ -34,25 +29,28 @@ int	free_stuff(t_list *node, char **matrix)
 	return (0);
 }
 
-
 int	err_msg()
 {
 	ft_printf("Error\n");
-	return (0);
+	return (1);
 }
 
-// da levare
-void	stack_printer(t_list *stack_a)
+int	father_checker(char **argv, t_list **stack_a, int i)
 {
-	t_list	*tmp1;
-
-	tmp1 = stack_a;
-	ft_printf("stack A\n");
-	while (ft_lstsize(tmp1) > 0)
+	if (check_args(argv, i) != 0)
 	{
-		ft_printf("|\t%i\n", tmp1->content);
-		tmp1 = tmp1->next;
+		if (i == 0)
+			free_stuff(argv);
+		return (err_msg());
 	}
+	if (check_and_save_list(argv, stack_a, i) != 0)
+	{
+		if (i == 0)
+			free_stuff(argv);
+		ft_lstdelall(stack_a);
+		return (1);
+	}
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -66,17 +64,9 @@ int	main(int argc, char **argv)
 	i = input_checker(argc);
 	if (i == 0)
 		argv = ft_split(argv[1], ' ');
-	if (check_args(argv, i) != 0 || check_and_save_list(argv, &stack_a, i) != 0)
-	{
-		free_stuff(NULL, argv);
-		ft_lstdelall(&stack_a);
-		return (0);
-	}
+	if (father_checker(argv, &stack_a, i) == 1)
+		return (1);
 	sort(&stack_a, &stack_b);
-	// da levare
-	stack_printer(stack_a);
-	// da levare
-	ft_printf("MOSSE EFFETTIVE: %i\n", count_moves(0));
 	ft_lstdelall(&stack_a);
 	return (0);
 }

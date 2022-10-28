@@ -14,20 +14,18 @@ NAME	=	push_swap
 
 CC		=	gcc
 
-CFLAGS	=	-Wall
+CFLAGS	=	-Wall -Wextra -Werror
 
 SRC	=	src/push_swap.c \
-		src/msg.c \
 		src/check_args.c \
-		src/list.c \
 		src/utils.c \
 		src/moves_a.c \
 		src/moves_b.c \
 		src/moves_ab.c \
 		src/moves_support.c \
 		src/sort.c \
-		src/lis.c \
 		src/sort_3n.c \
+		src/lis.c \
 		src/find.c \
 		src/calculate_moves.c
 

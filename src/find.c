@@ -6,13 +6,13 @@
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:39:36 by dgioia            #+#    #+#             */
-/*   Updated: 2022/10/26 02:03:59 by dgioia           ###   ########.fr       */
+/*   Updated: 2022/10/27 15:32:34 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	ft_is_the_highest(t_list **stack_a, int content)
+int	is_the_highest(t_list **stack_a, int content)
 {
 	t_list	*tmp;
 
@@ -26,7 +26,7 @@ int	ft_is_the_highest(t_list **stack_a, int content)
 	return (1);
 }
 
-int	ft_is_the_lowest(t_list **stack_a, int content)
+int	is_the_lowest(t_list **stack_a, int content)
 {
 	t_list	*tmp;
 
@@ -40,7 +40,7 @@ int	ft_is_the_lowest(t_list **stack_a, int content)
 	return (1);
 }
 
-int	ft_handle_lowest_highest(t_list	**stack_a, int size_a)
+int	handle_lowest_highest(t_list	**stack_a, int size_a)
 {
 	int		counter;
 	t_list	*tmpa;
@@ -58,7 +58,7 @@ int	ft_handle_lowest_highest(t_list	**stack_a, int size_a)
 		return (counter);
 }
 
-int	ft_find_best(t_list	**stack_a, t_list	**stack_b)
+int	find_best_nb(t_list	**stack_a, t_list	**stack_b)
 {
 	t_list	*tmpb;
 	int		best_moves;

@@ -6,7 +6,7 @@
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:14:12 by dgioia            #+#    #+#             */
-/*   Updated: 2022/10/26 02:04:53 by dgioia           ###   ########.fr       */
+/*   Updated: 2022/10/27 15:37:10 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int	ft_find_a_moves(int b_content, int size_a, t_list	**stack_a)
 {
 	int	counter;
 
-	if (ft_is_the_lowest(stack_a, b_content) == 1 || \
-		ft_is_the_highest(stack_a, b_content) == 1)
+	if (is_the_lowest(stack_a, b_content) == 1 || \
+		is_the_highest(stack_a, b_content) == 1)
 	{
-		counter = ft_handle_lowest_highest(stack_a, size_a);
+		counter = handle_lowest_highest(stack_a, size_a);
 		return (counter);
 	}
 	counter = ft_moves_a_helper(size_a, b_content, stack_a);

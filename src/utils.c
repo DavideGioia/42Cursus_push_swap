@@ -6,20 +6,11 @@
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:13:07 by dgioia            #+#    #+#             */
-/*   Updated: 2022/10/26 17:54:34 by dgioia           ###   ########.fr       */
+/*   Updated: 2022/10/27 15:26:18 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-// da levare
-int	count_moves(int i)
-{
-	static int	m;
-
-	m = m + i;
-	return (m);
-}
 
 int	input_checker(int argc)
 {

@@ -27,13 +27,11 @@ int	check_and_save_list(char **argv, t_list **stack_a, int i)
 	return (0);
 }
 
-int	check_duplicates(char **argv)
+int	check_duplicates(char **argv, int i)
 {
-	int	i;
 	int	j;
 	int	k;
 
-	i = 1;
 	k = 1;
 	while (argv[i])
 	{
@@ -73,8 +71,13 @@ int	check_digit(char **argv, int i)
 int	check_args(char **argv, int i)
 {
 	if (check_digit(argv, i) == 0)
-		check_duplicates(argv);
+	{
+		if (check_duplicates(argv, i) == 1)
+			return (1);
+	}
 	else
+	{
 		return (1);
+	}
 	return (0);
 }
