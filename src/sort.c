@@ -6,7 +6,7 @@
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:24:46 by dgioia            #+#    #+#             */
-/*   Updated: 2022/10/27 15:36:44 by dgioia           ###   ########.fr       */
+/*   Updated: 2022/10/28 16:47:23 by dgioia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,10 @@ int	sort(t_list **stack_a, t_list **stack_b)
 {
 	int	*lis;
 	int	*array_conv;
-	int len;
+	int	len;
 
-	if(ft_lstsize(*stack_a) == 2)
-	{
-		if ((*stack_a)->content > (*stack_a)->next->content)
-			ft_sa(stack_a);
-		return (0);
-	}
-	if (ft_lstsize(*stack_a) == 3)
-	{
-		sort_3n(stack_a);
-		return (0);
-	}
+	if (check_sort(stack_a) != 0)
+		return (1);
 	ft_pb(stack_a, stack_b);
 	ft_pb(stack_a, stack_b);
 	if (ft_lstsize(*stack_a) == 3)

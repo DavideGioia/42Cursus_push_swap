@@ -29,7 +29,7 @@ int	free_stuff(char **matrix)
 	return (0);
 }
 
-int	err_msg()
+int	err_msg(void)
 {
 	ft_printf("Error\n");
 	return (1);
@@ -67,6 +67,8 @@ int	main(int argc, char **argv)
 	if (father_checker(argv, &stack_a, i) == 1)
 		return (1);
 	sort(&stack_a, &stack_b);
+	if (i == 0)
+		free_stuff(argv);
 	ft_lstdelall(&stack_a);
 	return (0);
 }

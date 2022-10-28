@@ -5,9 +5,9 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgioia <dgioia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 17:33:08 by dgioia            #+#    #+#             */
-/*   Updated: 2022/09/24 17:33:08 by dgioia           ###   ########.fr       */
-/*     check_and_save_list                                                                       */
+/*   Created: 2022/10/28 16:48:59 by dgioia            #+#    #+#             */
+/*   Updated: 2022/10/28 16:48:59 by dgioia           ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
@@ -22,7 +22,7 @@ typedef struct s_num
 	int	thi;
 }	t_num;
 
-int		err_msg();
+int		err_msg(void);
 int		check_duplicates(char **argv, int i);
 int		check_digit(char **argv, int i);
 int		check_args(char **argv, int i);
@@ -52,13 +52,14 @@ int		sort(t_list **stack_a, t_list **stack_b);
 void	sort_stack_a(t_list **stack_a, t_list **stack_b, int *lis, int len);
 void	sort_stack_b(t_list **stack_a, t_list **stack_b);
 void	sort_3n(t_list **stack);
+int		check_sort(t_list **stack_a);
 int		*ft_lis(int	*array, int size, int *len);
-int	find_best_nb(t_list	**stack_a, t_list	**stack_b);
-int	is_the_lowest(t_list **stack_a, int content);
-int	handle_lowest_highest(t_list	**stack_a, int size_a);
-int	is_the_highest(t_list **stack_a, int content);
-int	ft_calculate_moves(t_list **stack_a, t_list **stack_b, int b_content);
-int	ft_find_a_moves(int b_content, int size_a, t_list	**stack_a);
-int	ft_find_b_moves(int b_content, int size_b, t_list	**stack_b);
+int		find_best_nb(t_list	**stack_a, t_list	**stack_b);
+int		is_the_lowest(t_list **stack_a, int content);
+int		handle_lowest_highest(t_list	**stack_a, int size_a);
+int		is_the_highest(t_list **stack_a, int content);
+int		ft_calculate_moves(t_list **stack_a, t_list **stack_b, int b_content);
+int		ft_find_a_moves(int b_content, int size_a, t_list	**stack_a);
+int		ft_find_b_moves(int b_content, int size_b, t_list	**stack_b);
 
 #endif
